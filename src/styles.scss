@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+$primary: #00ADF2;
+$secondary: #DADADA;
+$main: deeppink;
+
+$desktop-lg: 1666px;
+
+@mixin desktop-lg {
+  @media screen and (min-width: $desktop-lg) {
+    @content
+  }
+}
+
+*, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #222;
+}
+
