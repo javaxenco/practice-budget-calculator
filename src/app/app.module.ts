@@ -6,6 +6,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { BudgetFormComponent } from './main-page/budget-form/budget-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
