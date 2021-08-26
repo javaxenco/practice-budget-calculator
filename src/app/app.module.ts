@@ -7,19 +7,27 @@ import { BudgetFormComponent } from './main-page/budget-form/budget-form.compone
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { LoginPageComponent } from './login-page/login-page.component';
+import {AppRoutingModule} from "./app.routing-module";
+
+
+import {environment} from "../environments/environment";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    BudgetFormComponent
+    BudgetFormComponent,
+    LoginPageComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

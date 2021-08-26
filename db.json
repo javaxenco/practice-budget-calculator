@@ -1,3 +1,24 @@
 {
-  "transactions": []
+  "transactions": [
+    {
+      "amount": 975,
+      "description": "ხელფასი",
+      "id": 1
+    },
+    {
+      "amount": -110,
+      "description": "ბერუს ვალი",
+      "id": 2
+    },
+    {
+      "amount": -20,
+      "description": "სანდროს ვალი",
+      "id": 3
+    },
+    {
+      "amount": -300,
+      "description": "ხატიაააააააააა",
+      "id": 4
+    }
+  ]
 }
