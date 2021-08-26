@@ -1,0 +1,171 @@
+@import 'src/styles.scss';
+
+@keyframes typewriter {
+  100% {
+    left: 100%;
+    visibility: hidden;
+  }
+}
+
+header {
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .logout {
+    padding: 0.8rem 2.3rem;
+    background: $main;
+    height: 4rem;
+    font-size: 1.4rem;
+    border: 0;
+    border-radius: 4px;
+    letter-spacing: 0.12rem;
+    border: 2px solid #222;
+
+    &:hover {
+      background: #222;
+      border: 2px solid $main;
+      color: $main;
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+
+  .title-wrapper {
+    width: calc(100% - 22rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    position: relative;
+    width: max-content;
+    margin: auto;
+    color: $main;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &::before {
+      background: #222;
+      animation: typewriter 3s steps(20) forwards;
+    }
+
+    &::after {
+      background: white;
+      width: 2px;
+      animation: typewriter 3s steps(20) forwards;
+    }
+  }
+}
+
+section {
+  text-align: center;
+  border-top: 0.3rem solid $main;
+  border-bottom: 0.3rem solid $main;
+
+  p {
+    padding: 5rem;
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+    color: $main;
+  }
+}
+
+footer {
+  .budget-wrapper {
+    display: flex;
+    background-size: cover;
+    padding-top: 3rem;
+    min-height: 30vh;
+
+    .section {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        font-size: 2rem;
+        color: $main;
+        letter-spacing: 0.2rem;
+        margin-bottom: 3rem;
+      }
+
+  .button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 30rem;
+    padding-right: 1.2rem;
+
+    .filter {
+      color: $main;
+      background: transparent;
+      border: 0;
+      margin-bottom: 1rem;
+      cursor:pointer;
+      position: relative;
+
+      i {
+        padding-left: 0.5rem;
+        position: absolute;
+        top: 0.35rem
+      }
+    }
+  }
+
+      .income-wrapper, .outcome-wrapper {
+        width: 30rem;
+        padding: 0 1rem;
+        min-height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $main;
+        border-radius: 0.4rem;
+        margin-bottom: 1rem;
+
+        @include desktop-lg {
+          margin-bottom: 2rem;
+        }
+
+        button {
+          height: 100%;
+          width: 4rem;
+          background-color: $main;
+          border: none;
+          cursor: pointer;
+
+          &:focus, &:active {
+            outline: 0;
+          }
+        }
+
+        p {
+          font-size: 1.4rem;
+
+          &:first-child{
+            width: 40%;
+          }
+
+          &:last-child {
+            width: 60%;
+          };
+        }
+      }
+    }
+  }
+}

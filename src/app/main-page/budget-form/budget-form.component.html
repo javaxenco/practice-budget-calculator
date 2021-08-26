@@ -1,0 +1,15 @@
+<div class="form-wrapper">
+  <form autocomplete="off" (ngSubmit)="addData()" [formGroup]="form" (keyup.enter)="addData()">
+    <div class="amount">
+      <input id="amount" type="number" formControlName="amount" onKeyDown="if(this.value.length==10 && event.keyCode>47 && event.keyCode < 58)return false;">
+      <label for="amount" class="placeholder">თანხა</label>
+    </div>
+    <div class="description">
+      <input id="description" formControlName="description" type="text" maxlength="20" >
+      <label class="placeholder" for="description">აღწერა</label>
+    </div>
+    <div class="button-wrapper">
+      <button [disabled]="!this.form.valid">დამატება</button>
+    </div>
+  </form>
+</div>

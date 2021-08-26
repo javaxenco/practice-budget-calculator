@@ -1,0 +1,33 @@
+<div class="form-wrapper">
+  <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()" (keydown.enter)="onSubmit()">
+    <h2 class="sign-in">Sign In</h2>
+
+    <div class="alert-error" *ngIf="authService.$error | async as error">
+       <h2> {{ error }}</h2>
+    </div>
+      <div class="input-wrapper">
+        <div class="email-wrapper" [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}">
+          <input type="text" id="email" formControlName="email">
+          <label for="email" class="placeholder">ელ-ფოსტა</label>
+          <div *ngIf="form.get('email').touched && form.get('email').invalid" class="error-message">
+            <small *ngIf="form.get('email').hasError('required')">*Email is required</small>
+            <small *ngIf="form.get('email').hasError('email')">*Email is not correct</small>
+          </div>
+        </div>
+        <div class="password-wrapper">
+          <input type="password" id="password" formControlName="password">
+          <label class="placeholder" for='password'>პაროლი</label>
+          <div class="error-message" *ngIf="form.get('password').touched && form.get('password').invalid">
+            <small *ngIf="form.controls['password'].errors.required">*Password is required</small>
+            <small *ngIf="form.controls['password'].errors.minlength">*Password length has to be
+              {{form.get('password').errors.minlength.requiredLength}}. Now it's
+              {{ form.get('password').errors.minlength.actualLength}}
+            </small>
+          </div>
+        </div>
+      </div>
+      <button type="submit">
+       შესვლა
+      </button>
+  </form>
+</div>

@@ -1,0 +1,58 @@
+<header>
+
+  <button (click)="logOut()" class="logout">
+    გასვლა
+  </button>
+  <div class="title-wrapper">
+    <h2>
+      My Budget Calculator
+    </h2>
+  </div>
+
+</header>
+
+<section>
+  <p  [@showUp] >
+   თანხა: {{ fee }} ლარი
+  </p>
+</section>
+
+<main>
+  <app-budget-form
+  (formValue)="receiveData($event)"
+  ></app-budget-form>
+</main>
+
+<footer>
+  <div class="budget-wrapper">
+    <div class="first section">
+    <h2>შემოსავალი</h2>
+      <div class="button-wrapper">
+        <button class="filter" (click)="filterByDate(true)">დამატების დროით გაფილტვრა <i class="fas fa-sort"></i></button>
+        <button class="filter" (click)="filterByPrice(true)">თანხით გაფილტვრა <i class="fas fa-sort"></i> </button>
+      </div>
+   <div class="income" *ngFor="let info of PLUS_DATA; let idx = index">
+     <div class="income-wrapper" *ngIf="info.amount > 0">
+     <p class="amount">თანხა: {{ info.amount }}</p>
+     <p class="amount">აღწერა: {{ info.description }}</p>
+       <button (click)="removeItem(info.id)"><i class="fas fa-trash"></i></button>
+     </div>
+
+   </div>
+    </div>
+    <div class="second section">
+    <h2> გასავალი </h2>
+      <div class="button-wrapper">
+        <button class="filter" (click)="filterByDate(false)">დამატების დროით გაფილტვრა <i class="fas fa-sort"></i></button>
+        <button class="filter" (click)="filterByPrice(false)">თანხით გაფილტვრა <i class="fas fa-sort"></i></button>
+      </div>
+    <div class="outcome" *ngFor="let info of MINUS_DATA">
+      <div *ngIf="info.amount < 0" class="outcome-wrapper">
+      <p class="amount">თანხა: {{ info.amount }}</p>
+      <p class="amount">აღწერა: {{ info.description }}</p>
+        <button (click)="removeItem(info.id)"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    </div>
+  </div>
+</footer>

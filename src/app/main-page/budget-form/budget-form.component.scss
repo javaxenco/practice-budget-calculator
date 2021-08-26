@@ -1,0 +1,92 @@
+@import 'src/styles.scss';
+
+.form-wrapper {
+  background-color: #222;
+  width: 100%;
+  border-bottom: 3px solid deeppink;
+
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+
+    div {
+      position: relative;
+
+      &.amount, &.description {
+        margin-right: 5rem;
+      }
+
+      .placeholder {
+        color:  #222;
+        position: absolute;
+        cursor: text;
+        top: 2.2rem;
+        left: 2rem;
+        letter-spacing: 0.12rem;
+        transition: 0.3s;
+        font-size: 1.4rem;
+      }
+
+      input {
+        width: 20rem;
+        height: 6rem;
+        padding: 1rem 1rem 0;
+        background-color: deeppink;
+        border: none;
+        border-radius: 0.4rem;
+        font-size: 1.5rem;
+
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &:focus {
+          outline: 0;
+        }
+
+        &:focus ~ .placeholder,
+        &.ng-valid ~ .placeholder
+        {
+          transition: 0.3s;
+          top: 0.5rem;
+          left: 0.5rem;
+          font-size: 1rem;
+        }
+
+      }
+
+
+      button {
+
+        padding: 1rem 2rem;
+        border-radius: 0.4rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 0.2rem;
+        background: transparent;
+        color: deeppink;
+        border: deeppink 2px solid;
+        box-shadow: 1px 2px 15px deeppink;
+
+        &:focus, &:active {
+          outline: 0;
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+
+        &:hover {
+        background-color: deeppink;
+          color: #222;
+        }
+      }
+    }
+  }
+}

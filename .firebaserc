@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "practice-budget-calculator"
+  },
+  "targets": {
+    "practice-budget-calculator": {
+      "hosting": {
+        "practice-app": [
+          "practice-budget-calculator"
+        ]
+      }
+    }
+  }
+}
