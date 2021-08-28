@@ -11,8 +11,6 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {AppRoutingModule} from "./app.routing-module";
 
 
-import {environment} from "../environments/environment";
-
 
 @NgModule({
   declarations: [
@@ -28,8 +26,11 @@ import {environment} from "../environments/environment";
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

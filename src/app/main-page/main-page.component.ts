@@ -22,7 +22,10 @@ export class MainPageComponent implements OnInit {
   MINUS_DATA: budget[];
   PLUS_DATA: budget[];
 
-  constructor(private transactionService: TransactionService, private auth: AuthServiceService) { }
+  budget = []
+  constructor(private transactionService: TransactionService, private auth: AuthServiceService) {
+
+  }
 
   ngOnInit(): void {
    this.getTransactionData()
@@ -41,8 +44,9 @@ export class MainPageComponent implements OnInit {
 
   receiveData(data: budget) {
     this.transactionService.postTransactions(data).pipe(
-      // finalize(() =>this.getTransactionData())
+      finalize(() =>this.getTransactionData())
     ).subscribe();
+
   }
 
   recalculateSum(): void {
